@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Portafolio Profesional — Danilo A. Cuadros</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="portafolio.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <h1 data-i18n="header_title">Portafolio profesional — Demo estructural</h1>
+        <p class="sub" data-i18n="header_subtitle">
+          Perfil pensado para reclutadores y leads técnicos: muestra tu historia profesional de forma clara y visual.
+        </p>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-active" data-lang-btn="es">ES</button>
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+        </div>
+        <a href="index.html" class="back" data-i18n="back_link">← Volver al portafolio</a>
+      </div>
+    </header>
+
+    <!-- PERFIL -->
+    <section class="card">
+      <div class="top">
+        <div class="avatar">
+          <div class="avatar-inner">DA</div>
+        </div>
+        <div>
+          <h2 data-i18n="profile_title">Perfil</h2>
+          <p data-i18n="profile_body">
+            Programador Senior front-end enfocado en interfaces limpias, accesibilidad y rendimiento.
+            Esta página funciona como un “sobre mí” extendido para compartir con reclutadores y leads técnicos.
+          </p>
+          <div class="chips">
+            <span class="chip" data-i18n="chip_frontend">Front-end / UI</span>
+            <span class="chip" data-i18n="chip_dashboards">Dashboards</span>
+            <span class="chip" data-i18n="chip_ecommerce">eCommerce</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="card">
+      <h2 data-i18n="skills_title">Habilidades clave</h2>
+      <div class="skills">
+        <div class="skill">
+          <span data-i18n="skill_html">HTML5 / CSS3 (Flexbox, Grid, responsive)</span>
+          <div class="bar"><span style="width:95%"></span></div>
+        </div>
+        <div class="skill">
+          <span data-i18n="skill_js">JavaScript / TypeScript</span>
+          <div class="bar"><span style="width:88%"></span></div>
+        </div>
+        <div class="skill">
+          <span data-i18n="skill_react">React, componentes reutilizables</span>
+          <div class="bar"><span style="width:82%"></span></div>
+        </div>
+        <div class="skill">
+          <span data-i18n="skill_ux">Diseño de interfaces y UX</span>
+          <div class="bar"><span style="width:80%"></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCIA -->
+    <section class="card">
+      <h2 data-i18n="exp_title">Experiencia simulada (plantilla para CV real)</h2>
+      <div class="timeline">
+        <div class="t-item">
+          <div class="t-title" data-i18n="exp1_title">Front-end Lead — TechLogix (demo)</div>
+          <div class="t-meta" data-i18n="exp1_meta">2022 – Presente · Remoto</div>
+          <ul>
+            <li data-i18n="exp1_li1">
+              Diseño y construcción de librería de componentes UI para varios productos internos.
+            </li>
+            <li data-i18n="exp1_li2">
+              Implementación de dashboards de operaciones con métricas de ventas en tiempo casi real.
+            </li>
+          </ul>
+        </div>
+
+        <div class="t-item">
+          <div class="t-title" data-i18n="exp2_title">UI Engineer — StoreWave (demo)</div>
+          <div class="t-meta" data-i18n="exp2_meta">2020 – 2022 · Híbrido</div>
+          <ul>
+            <li data-i18n="exp2_li1">
+              Desarrollo de landings orientadas a conversión para campañas de marketing.
+            </li>
+            <li data-i18n="exp2_li2">
+              Optimización de tiempos de carga y métricas de Core Web Vitals.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="note" data-i18n="exp_note">
+        En tu versión real solo reemplazas empresas demo, fechas y logros por tus proyectos verdaderos
+        (Amazon Flex, compañías de Colombia, etc.).
+      </p>
+    </section>
+
+    <!-- CÓMO LO USAS + CTAs -->
+    <section class="card">
+      <h2 data-i18n="how_title">Cómo uso este perfil en procesos reales</h2>
+      <ul class="how-list">
+        <li data-i18n="how_li1">
+          Envío esta página junto con mi CV en PDF a reclutadores como resumen rápido de mi perfil.
+        </li>
+        <li data-i18n="how_li2">
+          Durante entrevistas, muestro el dashboard, esta página y la landing como casos concretos de diseño y front-end.
+        </li>
+        <li data-i18n="how_li3">
+          LinkedIn, GitHub y este portafolio cuentan la misma historia: front-end, dashboards y eCommerce.
+        </li>
+      </ul>
+
+      <div class="cta-row">
+        <a href="#" class="btn" id="cvDemoBtn" data-i18n="cta_cv">Descargar CV (demo)</a>
+        <a href="https://github.com" target="_blank" class="btn-ghost" data-i18n="cta_github">
+          Ver repositorios en GitHub (demo)
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <script src="portafolio.js"></script>
+</body>
+</html>

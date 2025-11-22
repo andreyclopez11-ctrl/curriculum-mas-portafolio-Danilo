@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Landing eCommerce — Danilo A. Cuadros</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="landing.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <h1 data-i18n="header_title">Landing eCommerce — Demo</h1>
+        <p class="sub" data-i18n="header_subtitle">
+          Estructura pensada para vender: hero claro, productos destacados y CTA listos para conectar a un checkout real.
+        </p>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-active" data-lang-btn="es">ES</button>
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+        </div>
+        <a href="index.html" class="back" data-i18n="back_link">← Volver al portafolio</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-main">
+        <span class="badge" data-i18n="badge_main">Lanzamiento edición limitada</span>
+        <h2 class="title" data-i18n="hero_title">
+          Estructura lista para vender, no solo para verse bonita.
+        </h2>
+        <p class="text" data-i18n="hero_body">
+          Hero con propuesta de valor clara, botón principal visible y listado de beneficios.
+          Esta demo demuestra cómo planteas una landing enfocada en conversión para productos clave.
+        </p>
+        <a href="#productos" class="cta" data-i18n="hero_cta">
+          Ver productos destacados
+        </a>
+        <span class="subcta" data-i18n="hero_subcta">
+          Scroll suave hacia la sección de catálogo.
+        </span>
+      </div>
+
+      <aside class="hero-card">
+        <h2 data-i18n="checklist_title">Checklist de esta landing</h2>
+        <ul>
+          <li data-i18n="checklist_li1">Mensaje directo y sin tecnicismos para el usuario final.</li>
+          <li data-i18n="checklist_li2">CTA principal arriba del double-scroll.</li>
+          <li data-i18n="checklist_li3">Productos con beneficio, precio y acción clara.</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos">
+      <div class="grid">
+        <!-- Producto 1 -->
+        <article class="product">
+          <span class="tag" data-i18n="p1_tag">PRODUCTO PRINCIPAL</span>
+          <h3 class="p-title" data-i18n="p1_title">Auriculares XT Pro (demo)</h3>
+          <p class="p-desc" data-i18n="p1_desc">
+            Audio claro, cancelación de ruido suave y batería para toda la jornada.
+            Ideal para home office, gaming y videollamadas.
+          </p>
+          <div class="p-foot">
+            <div>
+              <span class="price" data-i18n="p1_price">$79.99</span><br>
+              <span class="badge-mini" data-i18n="p1_badge">Envío 24-48h</span>
+            </div>
+            <button class="btn" data-product="Auriculares XT Pro" data-i18n="p1_cta">
+              Comprar ahora
+            </button>
+          </div>
+        </article>
+
+        <!-- Producto 2 -->
+        <article class="product">
+          <span class="tag" data-i18n="p2_tag">UPSELL</span>
+          <h3 class="p-title" data-i18n="p2_title">Smartwatch Lite (demo)</h3>
+          <p class="p-desc" data-i18n="p2_desc">
+            Seguimiento de actividad, notificaciones y métricas básicas de salud sin complicaciones.
+          </p>
+          <div class="p-foot">
+            <div>
+              <span class="price" data-i18n="p2_price">$129.00</span><br>
+              <span class="badge-mini" data-i18n="p2_badge">Bundle recomendado</span>
+            </div>
+            <button class="btn" data-product="Smartwatch Lite" data-i18n="p2_cta">
+              Añadir al carrito
+            </button>
+          </div>
+        </article>
+
+        <!-- Producto 3 -->
+        <article class="product">
+          <span class="tag" data-i18n="p3_tag">EXTRA</span>
+          <h3 class="p-title" data-i18n="p3_title">Mochila Urban (demo)</h3>
+          <p class="p-desc" data-i18n="p3_desc">
+            Diseñada para laptops, con bolsillos rápidos y material resistente a salpicaduras.
+          </p>
+          <div class="p-foot">
+            <div>
+              <span class="price" data-i18n="p3_price">$59.50</span><br>
+              <span class="badge-mini" data-i18n="p3_badge">Stock limitado</span>
+            </div>
+            <button class="btn" data-product="Mochila Urban" data-i18n="p3_cta">
+              Ver detalles
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <p class="note" data-i18n="catalog_note">
+        Todo el contenido es ficticio y está pensado para mostrar tu capacidad de crear estructuras
+        de eCommerce. En un proyecto real solo cambias textos, precios y conectas estos botones con
+        tu flujo de checkout o Shopify.
+      </p>
+    </section>
+  </div>
+
+  <div id="cartToast" class="cart-toast">
+    Producto añadido (demo). Aquí iría la lógica real del carrito.
+  </div>
+
+  <script src="landing.js"></script>
+</body>
+</html>
