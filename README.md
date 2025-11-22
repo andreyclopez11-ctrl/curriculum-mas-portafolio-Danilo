@@ -17,7 +17,7 @@ He trabajado con empresas como **Bavaria**, **Corona Colcerámica**, **Amazon (I
 ## 🌐 Enlaces principales
 
 🔗 **Portafolio en línea:**  
-https://andreyclopez11-ctrl.github.io/danilo-portafolio/
+https://andreyclopez11-ctrl.github.io/curriculum-mas-portafolio-Danilo/
 
 💼 **GitHub:**  
 https://github.com/andreyclopez11-ctrl
@@ -37,9 +37,10 @@ andreyclopez11@gmail.com
 
 **Danilo Andrey Cuadros López**  
 📍 Maywood, Illinois, EE.UU.  
-🌐 https://andreyclopez11-ctrl.github.io/danilo-portafolio/
+🌐 https://andreyclopez11-ctrl.github.io/curriculum-mas-portafolio-Danilo/
 
 ---
 
 > ©️ 2025 Danilo Andrey Cuadros López — Portafolio Premium v1.0  
+
 > Hecho con ❤️ y dedicación.
