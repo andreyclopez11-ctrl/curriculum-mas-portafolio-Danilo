@@ -28,9 +28,6 @@ andreyclopez11@gmail.com
 ---
 
 ## 🧠 Proyectos destacados
-
-*(Agregaremos los enlaces cuando tú me digas qué quieres mostrar aquí.)*
-
 ---
 
 ## ✍️ Autor
@@ -44,3 +41,4 @@ andreyclopez11@gmail.com
 > ©️ 2025 Danilo Andrey Cuadros López — Portafolio Premium v1.0  
 
 > Hecho con ❤️ y dedicación.
+
