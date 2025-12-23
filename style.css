@@ -175,3 +175,184 @@ footer{text-align:center;padding:1rem 0;color:#dcecff;}
   background:#fff;color:#0b0c10;border-color:#e6eaf5;
 }
 footer, .copyright { color: #ffffff !important; }
+/* ==============================
+   SERVICIOS & PRECIOS (PREMIUM)
+   ============================== */
+
+/* Mejor tipografía y espaciado dentro del pricing */
+#pricing .pricing-head h2{
+  font-size: 1.45rem;
+  letter-spacing: .2px;
+}
+
+#pricing .pricing-head p{
+  margin-top: .25rem;
+  color: rgba(240,244,255,.88);
+  line-height: 1.7;
+}
+
+/* Contenedor con borde más fino y mejor contraste */
+#pricing .pricing-table-wrap{
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,.10);
+  background: rgba(8,12,20,.40);
+  box-shadow: 0 18px 60px rgba(0,0,0,.30);
+}
+
+/* Tabla con líneas más limpias */
+#pricing .pricing-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pricing .pricing-table thead th{
+  font-weight: 800;
+  color: rgba(240,244,255,.92);
+  letter-spacing: .35px;
+}
+
+/* Mejor alineación y legibilidad */
+#pricing .pricing-table tbody td{
+  color: rgba(240,244,255,.92);
+}
+
+/* Columna de precio: más pro */
+#pricing .price-col{
+  font-weight: 900;
+  color: #ffffff;
+}
+
+/* Separadores de grupo más elegantes */
+#pricing .group-row td{
+  background: rgba(255,255,255,.08);
+  color: rgba(240,244,255,.95);
+  border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+/* Pills: más “agency” */
+#pricing .pill{
+  padding: 6px 11px;
+  font-weight: 800;
+  letter-spacing: .2px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
+}
+
+/* Colores más premium */
+#pricing .pill.basic{
+  background: rgba(78,219,172,.14);
+  border-color: rgba(78,219,172,.25);
+}
+#pricing .pill.mid{
+  background: rgba(255,206,84,.14);
+  border-color: rgba(255,206,84,.25);
+}
+#pricing .pill.pro{
+  background: rgba(79,156,255,.14);
+  border-color: rgba(79,156,255,.25);
+}
+
+/* Notas */
+#pricing .pricing-notes{
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 14px;
+  padding: .9rem 1rem;
+}
+
+/* CTA: botones consistentes con tu UI */
+#pricing .pricing-cta{
+  margin-top: 1rem;
+}
+
+#pricing .pricing-cta .button-link{
+  background: rgba(255,255,255,0.10);
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 10px 16px;
+  border-radius: 999px;
+  transition: transform .2s ease, background .3s ease, color .3s ease;
+  backdrop-filter: blur(4px);
+}
+
+#pricing .pricing-cta .button-link:hover{
+  background: #fff;
+  color: #0072ff;
+  transform: translateY(-1px);
+}
+
+/* Links en tabla (si luego agregas) */
+#pricing a{
+  color: var(--aqua);
+  text-decoration: none;
+}
+#pricing a:hover{
+  text-decoration: underline;
+}
+
+/* Mobile: tabla más suave de usar */
+#pricing .pricing-table-wrap{
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Print: tabla limpia en PDF */
+@media print{
+  #pricing .pricing-table-wrap{
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+    box-shadow: none !important;
+  }
+  #pricing .pricing-table thead th{
+    background: #f5f5f5 !important;
+    color: #000 !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+  #pricing .pricing-table tbody td{
+    color: #000 !important;
+    border-bottom: 1px solid #eee !important;
+  }
+  #pricing .group-row td{
+    background: #f5f5f5 !important;
+    color: #000 !important;
+  }
+  #pricing .pricing-notes{
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+  }
+}
+/* Contact form premium */
+.contact-form{
+  margin-top: 1rem;
+  display: grid;
+  gap: .8rem;
+}
+
+.contact-form label span{
+  display:block;
+  margin-bottom:.35rem;
+  color: rgba(240,244,255,.9);
+  font-weight: 600;
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.06);
+  color: #fff;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+  border-color: rgba(78,219,172,.55);
+  box-shadow: 0 0 0 3px rgba(78,219,172,.18);
+}
+
+.contact-form button.button-link{
+  justify-content:center;
+  cursor:pointer;
+  border:none;
+}

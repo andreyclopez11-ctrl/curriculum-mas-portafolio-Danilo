@@ -5,6 +5,103 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Danilo Andrey Cuadros Lopez — Programador Senior Web</title>
   <link rel="stylesheet" href="./style.css"/>
+
+  <!-- ESTILOS PREMIUM PARA TABLA DE SERVICIOS Y PRECIOS (solo HTML, sin tocar tu style.css) -->
+  <style>
+    .pricing-head h2{ margin-bottom:.35rem; }
+    .pricing-head p{ margin-top:0; opacity:.85; line-height:1.6; }
+
+    .pricing-table-wrap{
+      margin-top: 1rem;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.35);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Scroll horizontal en móvil */
+    .pricing-table-wrap{ overflow-x:auto; }
+    .pricing-table{ width:100%; min-width: 820px; border-collapse: collapse; }
+
+    .pricing-table thead th{
+      text-align:left;
+      padding: 14px 16px;
+      font-size: .95rem;
+      letter-spacing:.2px;
+      background: rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      position: sticky;
+      top: 0;
+      z-index: 1;
+    }
+
+    .pricing-table tbody td{
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      vertical-align: top;
+      font-size: .95rem;
+      line-height: 1.45;
+    }
+
+    .pricing-table tbody tr:hover td{
+      background: rgba(255,255,255,.04);
+    }
+
+    .price-col{
+      white-space: nowrap;
+      font-weight: 700;
+      letter-spacing:.2px;
+    }
+
+    .group-row td{
+      padding: 12px 16px;
+      background: rgba(255,255,255,.07);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      font-size: .85rem;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: .82rem;
+      font-weight: 700;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      white-space: nowrap;
+    }
+    .pill.basic{ background: rgba(76,175,80,.14); border-color: rgba(76,175,80,.22); }
+    .pill.mid{ background: rgba(255,193,7,.14); border-color: rgba(255,193,7,.22); }
+    .pill.pro{ background: rgba(33,150,243,.14); border-color: rgba(33,150,243,.22); }
+
+    .pricing-notes{
+      margin-top: 1rem;
+      opacity: .9;
+      line-height: 1.7;
+      font-size: .95rem;
+    }
+    .pricing-notes strong{ font-weight: 800; }
+
+    .pricing-cta{
+      margin-top: 1rem;
+      display:flex;
+      gap:.6rem;
+      flex-wrap: wrap;
+      align-items:center;
+    }
+
+    .pricing-cta a.button-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
+    }
+  </style>
 </head>
 <body>
   <!-- Fondo interactivo -->
@@ -25,6 +122,10 @@
       <button data-section="experience" aria-controls="experience" data-i18n="nav.experience">Experiencia</button>
       <button data-section="skills" aria-controls="skills" data-i18n="nav.skills">Habilidades</button>
       <button data-section="projects" aria-controls="projects" data-i18n="nav.projects">Proyectos</button>
+
+      <!-- NUEVO BOTÓN: SERVICIOS Y PRECIOS -->
+      <button data-section="pricing" aria-controls="pricing" data-i18n="nav.pricing">Servicios y precios</button>
+
       <button data-section="contact" aria-controls="contact" data-i18n="nav.contact">Contacto</button>
       <button id="openContactModal" data-i18n="nav.quickContact">Contacto rápido</button>
       <button id="downloadPDF" data-i18n="nav.downloadPDF">Descargar PDF</button>
@@ -123,10 +224,190 @@
       </div>
     </section>
 
+    <!-- NUEVA SECCIÓN: SERVICIOS Y PRECIOS (TABLA PREMIUM) -->
+    <section id="pricing" class="section hidden">
+      <div class="pricing-head">
+        <h2 data-i18n="pricing.title">Servicios y Precios</h2>
+        <p data-i18n="pricing.subtitle">
+          Desarrollo web profesional con rangos reales según alcance, nivel de diseño y funcionalidades.
+        </p>
+      </div>
+
+      <div class="pricing-table-wrap" role="region" aria-label="Tabla de servicios y precios" tabindex="0">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th data-i18n="pricing.table.service">Servicio</th>
+              <th data-i18n="pricing.table.level">Nivel / Complejidad</th>
+              <th class="price-col" data-i18n="pricing.table.price">Rango de Precio (USD)</th>
+              <th data-i18n="pricing.table.includes">Incluye</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.landing">Landing Page</td></tr>
+            <tr>
+              <td data-i18n="pricing.landing.name">Landing Page</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$400 – $800</td>
+              <td data-i18n="pricing.landing.basic">1 página (secciones), responsive, WhatsApp + formulario</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.landing.name">Landing Page</td>
+              <td><span class="pill mid" data-i18n="pricing.level.mid">Intermedio</span></td>
+              <td class="price-col">$800 – $1,200</td>
+              <td data-i18n="pricing.landing.mid">Diseño más premium, mejor estructura, optimización básica</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.landing.name">Landing Page</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$1,200 – $1,800</td>
+              <td data-i18n="pricing.landing.pro">Animaciones suaves, secciones dinámicas, UX mejorada</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.corp">Web Corporativo / Profesional</td></tr>
+            <tr>
+              <td data-i18n="pricing.corp.name">Sitio Profesional</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$900 – $1,800</td>
+              <td data-i18n="pricing.corp.basic">Hasta 5 secciones, responsive, estructura sólida</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.corp.name">Sitio Profesional</td>
+              <td><span class="pill mid" data-i18n="pricing.level.mid">Intermedio</span></td>
+              <td class="price-col">$1,800 – $3,000</td>
+              <td data-i18n="pricing.corp.mid">SEO técnico básico, mejor rendimiento, UI premium</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.corp.name">Sitio Profesional</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$3,000 – $5,000</td>
+              <td data-i18n="pricing.corp.pro">Copy mejorado (con info del cliente), UX/arquitectura pro</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.business">Business / Servicios Avanzados</td></tr>
+            <tr>
+              <td data-i18n="pricing.business.name">Business</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$2,000 – $3,500</td>
+              <td data-i18n="pricing.business.basic">Catálogo de servicios + formularios avanzados</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.business.name">Business</td>
+              <td><span class="pill mid" data-i18n="pricing.level.mid">Intermedio</span></td>
+              <td class="price-col">$3,500 – $6,000</td>
+              <td data-i18n="pricing.business.mid">Integraciones (Calendly/WhatsApp), estructura conversión</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.business.name">Business</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$6,000 – $9,000+</td>
+              <td data-i18n="pricing.business.pro">Diseño premium completo + experiencia tipo “agencia”</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.ecom">E-commerce</td></tr>
+            <tr>
+              <td data-i18n="pricing.ecom.name">Tienda Online</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$3,000 – $5,000</td>
+              <td data-i18n="pricing.ecom.basic">Tienda simple, pagos básicos, configuración inicial</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.ecom.name">Tienda Online</td>
+              <td><span class="pill mid" data-i18n="pricing.level.mid">Intermedio</span></td>
+              <td class="price-col">$5,000 – $8,000</td>
+              <td data-i18n="pricing.ecom.mid">Variaciones, checkout completo, estructura más robusta</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.ecom.name">Tienda Online</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$8,000 – $12,000+</td>
+              <td data-i18n="pricing.ecom.pro">Inventario, automatizaciones, integraciones avanzadas</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.redesign">Rediseño / Optimización</td></tr>
+            <tr>
+              <td data-i18n="pricing.redesign.name">Rediseño Web</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$600 – $1,200</td>
+              <td data-i18n="pricing.redesign.basic">Mejora visual y estructura, ajustes principales</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.redesign.name">Rediseño Web</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$1,200 – $2,500</td>
+              <td data-i18n="pricing.redesign.pro">Reestructura completa, mejor UX, optimización adicional</td>
+            </tr>
+
+            <tr class="group-row"><td colspan="4" data-i18n="pricing.group.maintenance">Mantenimiento Mensual (Opcional)</td></tr>
+            <tr>
+              <td data-i18n="pricing.maint.basic.name">Plan Básico</td>
+              <td><span class="pill basic" data-i18n="pricing.level.basic">Básico</span></td>
+              <td class="price-col">$60 – $90 / mes</td>
+              <td data-i18n="pricing.maint.basic.desc">Backups + cambios menores (hasta 30 min/mes)</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.maint.pro.name">Plan Profesional</td>
+              <td><span class="pill mid" data-i18n="pricing.level.mid">Intermedio</span></td>
+              <td class="price-col">$120 – $180 / mes</td>
+              <td data-i18n="pricing.maint.pro.desc">Hasta 2 horas/mes + soporte y actualizaciones</td>
+            </tr>
+            <tr>
+              <td data-i18n="pricing.maint.biz.name">Plan Business</td>
+              <td><span class="pill pro" data-i18n="pricing.level.pro">Avanzado</span></td>
+              <td class="price-col">$200 – $300+ / mes</td>
+              <td data-i18n="pricing.maint.biz.desc">Soporte continuo + optimización mensual</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="pricing-notes" data-i18n="pricing.notes">
+        <strong>Nota:</strong> La inversión final depende del alcance (páginas, contenido, integraciones y funcionalidades).
+        Si el cliente ya tiene dominio/hosting o necesita migración, se cotiza según el caso.
+      </p>
+
+      <h3 class="pricing-title" data-i18n="pricing.request">Solicitar cotización</h3>
+      <p class="pricing-text" data-i18n="pricing.request.subtitle">
+        Completa el formulario y recibirás respuesta por correo.
+      </p>
+
+      <form action="https://formspree.io/f/xeovakad" method="POST">
+      </form>
+      
+    </div>
+      <form class="contact-form"
+      action="https://formspree.io/f/xeovakad"
+      method="POST">
+
+      <label>
+        <span data-i18n="form.name">Nombre</span>
+        <input type="text" name="name" placeholder="Nombre" required>
+      </label>
+
+      <label>
+        <span data-i18n="form.email">Correo</span>
+        <input type="email" name="email" placeholder="Correo" required>
+      </label>
+
+      <label>
+        <span data-i18n="form.message">Mensaje</span>
+        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+      </label>
+
+      <!-- Opcional: para que te llegue con asunto claro -->
+      <input type="hidden" name="_subject" value="Nueva solicitud desde tu web">
+
+      <button type="submit" class="button-link" data-i18n="form.send">Enviar mensaje</button>
+      </form>
+    </section>
+
     <section id="contact" class="section hidden">
       <h2 data-i18n="contact.title">Contacto</h2>
       <p data-i18n="contact.text1">
-        Escríbeme a <a href="mailto:andreyclopez11@gmail.com">andreyclopez11@gmail.com</a> o llámame al <a href="tel:+12249988164">+1 224 998 8164</a>.
+        Escríbeme a <a href="mailto:andreyclopez11@gmail.com">andreyclopez11@gmail.com</a> o contáctame por
+        <a href="https://wa.me/12249988164?text=Hola%20Andr%C3%A9%2C%20quiero%20informaci%C3%B3n%20sobre%20servicios%20web."
+           target="_blank" rel="noopener">WhatsApp</a>.
       </p>
       <p data-i18n="contact.text2">
         <a id="githubLink" href="https://github.com/andreyclopez11-ctrl" target="_blank" rel="noopener">GitHub</a> ·
