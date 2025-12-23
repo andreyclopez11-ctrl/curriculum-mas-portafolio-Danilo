@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Danilo Andrey Cuadros Lopez — Programador Senior Web</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <!-- Fondo interactivo -->
+  <canvas id="bg" aria-hidden="true"></canvas>
+
+  <header class="hero">
+    <img src="./mi_foto.JPG" alt="Foto de Danilo" class="profile-pic"/>
+    <h1 data-i18n="hero.name">Danilo Andrey Cuadros Lopez</h1>
+    <p class="tagline" data-i18n="hero.tagline">
+      Programador Senior · Front-end | UI/UX | Web Apps
+    </p>
+    <p class="location" data-i18n="hero.location">
+      Maywood, Illinois · andreyclopez11@gmail.com · +1 224 998 8164
+    </p>
+
+    <nav class="buttons">
+      <button data-section="about" aria-controls="about" data-i18n="nav.about">Sobre mí</button>
+      <button data-section="experience" aria-controls="experience" data-i18n="nav.experience">Experiencia</button>
+      <button data-section="skills" aria-controls="skills" data-i18n="nav.skills">Habilidades</button>
+      <button data-section="projects" aria-controls="projects" data-i18n="nav.projects">Proyectos</button>
+      <button data-section="contact" aria-controls="contact" data-i18n="nav.contact">Contacto</button>
+      <button id="openContactModal" data-i18n="nav.quickContact">Contacto rápido</button>
+      <button id="downloadPDF" data-i18n="nav.downloadPDF">Descargar PDF</button>
+      <a href="./portafolio/index.html" class="button-link" data-i18n="nav.viewPortfolio">Ver Portafolio</a>
+      <!-- Botón de idioma -->
+      <button id="lang-toggle" class="lang-toggle" aria-label="Cambiar idioma">EN</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" class="section active">
+      <h2 data-i18n="about.title">Sobre mí</h2>
+      <p data-i18n="about.text">
+        Desarrollador de software senior con más de 6 años de experiencia en programación de aplicaciones y diseño de páginas web. Experto en soluciones digitales personalizadas, plataformas interactivas y automatización de procesos. He trabajado en proyectos corporativos, por contrato y desarrollo propio, tanto en Estados Unidos como en Colombia. Me adapto tanto a entornos presenciales como remotos, aunque disfruto especialmente los proyectos virtuales que fomentan la colaboración global, la creatividad y la eficiencia técnica.
+      </p>
+    </section>
+
+    <section id="experience" class="section hidden">
+      <h2 data-i18n="exp.title">Experiencia profesional</h2>
+
+      <article>
+        <h3 data-i18n="exp.freelance.title">Programador Senior Front-end · Freelance/Remoto</h3>
+        <span class="meta" data-i18n="exp.freelance.meta">2018 — 2025</span>
+        <ul>
+          <li data-i18n="exp.freelance.item1">Apps web con HTML5, CSS3, JavaScript, React y APIs REST.</li>
+          <li data-i18n="exp.freelance.item2">UI/UX, animaciones y responsive avanzado.</li>
+          <li data-i18n="exp.freelance.item3">Colaboración internacional con equipos remotos.</li>
+        </ul>
+      </article>
+
+      <article>
+        <h3 data-i18n="exp.suncast.title">suncast · Illinois, EE.UU.</h3>
+        <span class="meta" data-i18n="exp.suncast.meta">2024 — 2025</span>
+        <p data-i18n="exp.suncast.role">Desarrollador de plataformas y sistemas internos</p>
+        <p data-i18n="exp.suncast.item1">-Diseñe e implemente una plataforma automatizada basada en Excel y desarrollo web para la gestion operativa y financiera.</p>
+        <p data-i18n="exp.suncast.item2">-Integré interfaces modernas optimizadas para análisis de datos y control administrativo.</p>
+        <p data-i18n="exp.suncast.item3">-Participé en la creación del sistema presentado en la demo corporativa 2025.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="exp.amazon.title">Amazon · Illinois, EE.UU.</h3>
+        <span class="meta" data-i18n="exp.amazon.meta">2023</span>
+        <p data-i18n="exp.amazon.role">Desarrollador de soporte y automatización de procesos</p>
+        <p data-i18n="exp.amazon.item1">-Desarrollo de módulos web para gestión de personal y control de bloques.</p>
+        <p data-i18n="exp.amazon.item2">-Optimización de flujos internos mediante scripts y automatizaciones funcionales.</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="exp.cheese.title">Cheese Merchants of America · West Chicago, EE. UU</h3>
+        <span class="meta" data-i18n="exp.cheese.meta">2021 — 2022</span>
+        <p data-i18n="exp.cheese.role">Diseñador web y programador front-end</p>
+        <p data-i18n="exp.cheese.item1">-Creación de la plataforma digital para pedidos y gestión de clientes.</p>
+        <p data-i18n="exp.cheese.item2">-Implementación de diseño adaptable con enfoque en experiencia de usuario (UI/UX).</p>
+      </article>
+
+      <article>
+        <h3 data-i18n="exp.projects.title">Proyectos por contrato y desarrollo propio</h3>
+        <span class="meta" data-i18n="exp.projects.meta">2018 — Presente</span>
+        <p data-i18n="exp.projects.item1">-Diseño de páginas web y sistemas personalizados para empresas de distintos sectores.</p>
+        <p data-i18n="exp.projects.item2">-En Colombia desarrollé la web corporativa de TecnoAndes S.A.S., del sector industrial.</p>
+        <p data-i18n="exp.projects.item3">-Creación de mi página web profesional y portafolio interactivo, donde presento demos de mis proyectos y sistemas automatizados.</p>
+      </article>
+    </section>
+
+    <section id="skills" class="section hidden">
+      <h2 data-i18n="skills.title">Technical Skills</h2>
+      <div class="skills-grid">
+        <div>
+          <h3 data-i18n="skills.languagesTitle">Lenguajes & Frameworks</h3>
+          <p data-i18n="skills.languagesText">HTML5 · CSS3 · JavaScript (ES6+) · SQL · React · Node.js · (MySQL)</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.toolsTitle">Herramientas & Ecosistema</h3>
+          <p data-i18n="skills.toolsText">VS Code · Git/GitHub · Figma · Vite · Firebase · Excel avanzado</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.designTitle">Diseño & Front-end</h3>
+          <p data-i18n="skills.designText">UX/UI · Accesibilidad · Diseño responsivo · Animaciones CSS · Consumo e implementacion de APIs REST</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.automationTitle">Automatizacion & Operaciones</h3>
+          <p data-i18n="skills.automationText">Automatizacion y desarrollo de sistemas empresariales · Integraciones API- hosting y gestion de proyectos web</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section hidden">
+      <h2 data-i18n="projects.title">Proyectos Destacados</h2>
+      <ul class="project-list">
+        <li data-i18n="projects.item1"><strong>Dashboard Empresarial</strong> — KPIs de ventas y logística en tiempo real.</li>
+        <li data-i18n="projects.item2"><strong>Portafolio Profesional</strong> — Optimizado para reclutadores y empresas.</li>
+        <li data-i18n="projects.item3"><strong>Landing eCommerce</strong> — Animaciones y conversión enfocada.</li>
+      </ul>
+      <div style="margin-top:0.8rem">
+        <a href="./portafolio/index.html" class="button-link" data-i18n="projects.viewFull">Ver portafolio completo</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section hidden">
+      <h2 data-i18n="contact.title">Contacto</h2>
+      <p data-i18n="contact.text1">
+        Escríbeme a <a href="mailto:andreyclopez11@gmail.com">andreyclopez11@gmail.com</a> o llámame al <a href="tel:+12249988164">+1 224 998 8164</a>.
+      </p>
+      <p data-i18n="contact.text2">
+        <a id="githubLink" href="https://github.com/andreyclopez11-ctrl" target="_blank" rel="noopener">GitHub</a> ·
+        <a id="linkedinLink" href="https://www.linkedin.com/in/andrey-lopez-44559038b" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </section>
+
+    <!-- Firma + QR (también aparece en el PDF) -->
+    <section class="section sign-qr">
+      <div class="sign">
+        <p data-i18n="sign.greeting">Atentamente,</p>
+        <img src="./firma.png" alt="Firma de Danilo" onerror="this.parentElement.style.display='none'"/>
+        <p class="name" data-i18n="sign.name">Danilo Andrey Cuadros López</p>
+      </div>
+      <div class="qr">
+        <p data-i18n="qr.text">Escanea para ver portafolio</p>
+        <img id="qrImage" alt="QR a mi perfil"/>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small data-i18n="footer.text">©️ 2025 Danilo Andrey Cuadros López — Programador Senior Web</small>
+  </footer>
+
+  <!-- Modal de contacto -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document" tabindex="-1">
+      <button class="modal__close" aria-label="Cerrar" title="Cerrar" data-close>&times;</button>
+      <h2 id="contactTitle" data-i18n="modal.title">Contacto</h2>
+      <p><strong data-i18n="modal.emailLabel">Email:</strong> <a href="mailto:andreyclopez11@gmail.com">andreyclopez11@gmail.com</a></p>
+      <p><strong data-i18n="modal.phoneLabel">Teléfono:</strong> <a href="tel:+12249988164">+1 224 998 8164</a></p>
+      <p><strong data-i18n="modal.locationLabel">Ubicación:</strong> <span data-i18n="modal.locationValue">Maywood, Illinois (EE. UU.)</span></p>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="i18n-auto.js"></script>
+</body>
+</html>

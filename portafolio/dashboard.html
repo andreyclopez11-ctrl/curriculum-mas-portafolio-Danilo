@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Dashboard Empresarial — Danilo A. Cuadros</title>
+
+  <!-- Fuente e iconos -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Estilos del dashboard -->
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <div>
+        <h1 data-i18n="header_title">Dashboard Empresarial</h1>
+        <p class="sub" data-i18n="header_subtitle">
+          Demo de KPIs de ventas y logística en tiempo casi real para tu portafolio.
+        </p>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="lang-switcher">
+          <button class="lang-btn lang-active" data-lang-btn="es">ES</button>
+          <button class="lang-btn" data-lang-btn="en">EN</button>
+        </div>
+        <a href="index.html" class="back" data-i18n="back_link">← Volver al portafolio</a>
+      </div>
+    </header>
+
+    <main class="layout">
+      <!-- COLUMNA IZQUIERDA -->
+      <section class="column">
+        <!-- Panel principal -->
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title" data-i18n="overview_title">Visión general</div>
+              <div class="small" data-i18n="overview_desc">
+                Ventas por día, órdenes y conversión estimada.
+              </div>
+            </div>
+            <span class="tag" data-i18n="badge_simulated">Datos simulados · Front-end only</span>
+          </div>
+
+          <div class="metrics">
+            <div class="metric">
+              <label data-i18n="metric_revenue_label">
+                Ingresos últimos <span id="daysLabel">30</span> días
+              </label>
+              <strong id="mSales">$0</strong>
+              <span id="mSalesTrend">+0% vs período anterior</span>
+            </div>
+            <div class="metric">
+              <label data-i18n="metric_orders_label">Órdenes procesadas</label>
+              <strong id="mOrders">0</strong>
+              <span id="mOrdersTrend">+0% vs período anterior</span>
+            </div>
+            <div class="metric">
+              <label data-i18n="metric_conv_label">Tasa de conversión</label>
+              <strong id="mConv">0%</strong>
+              <span id="mConvTrend">Tráfico orgánico + paid</span>
+            </div>
+            <div class="metric">
+              <label data-i18n="metric_aov_label">Ticket promedio</label>
+              <strong id="mAov">$0</strong>
+              <span id="mAovTrend">Promedio por orden</span>
+            </div>
+          </div>
+
+          <div class="filters">
+            <div>
+              <label class="small" data-i18n="filter_range_label">Rango de tiempo</label><br>
+              <select id="range">
+                <option value="7" data-i18n="filter_range_7">7 días</option>
+                <option value="14" data-i18n="filter_range_14">14 días</option>
+                <option value="30" selected data-i18n="filter_range_30">30 días</option>
+              </select>
+            </div>
+            <div>
+              <label class="small" data-i18n="filter_channel_label">Canal</label><br>
+              <select id="channel">
+                <option value="all" data-i18n="filter_channel_all">Todos</option>
+                <option value="web" data-i18n="filter_channel_web">Web</option>
+                <option value="mobile" data-i18n="filter_channel_mobile">Mobile</option>
+              </select>
+            </div>
+            <button id="refresh" data-i18n="btn_refresh">Actualizar KPIs</button>
+            <span class="small">
+              <span data-i18n="last_update">Última actualización:</span>
+              <span id="updated">—</span>
+            </span>
+          </div>
+
+          <canvas id="salesChart" height="200"></canvas>
+        </section>
+
+        <!-- Top productos -->
+        <section class="card">
+          <div class="card-header">
+            <div>
+              <div class="card-title" data-i18n="top_products_title">Top productos por ventas</div>
+              <div class="small" data-i18n="top_products_desc">
+                Ranking de productos con mayor facturación estimada.
+              </div>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+            <tr>
+              <th data-i18n="top_products_col_product">Producto</th>
+              <th data-i18n="top_products_col_category">Categoría</th>
+              <th data-i18n="top_products_col_revenue">Ingresos</th>
+              <th data-i18n="top_products_col_margin">Margen</th>
+            </tr>
+            </thead>
+            <tbody id="topProductsBody">
+            <!-- filas generadas por JS -->
+            </tbody>
+          </table>
+        </section>
+      </section>
+
+      <!-- COLUMNA DERECHA -->
+      <section class="column">
+        <!-- Detalle logístico -->
+        <aside class="card">
+          <div class="card-header">
+            <div class="card-title" data-i18n="logistics_title">Detalle logístico</div>
+          </div>
+
+          <div class="pill-row">
+            <span class="pill" data-i18n="pill_sla">SLA 24h</span>
+            <span class="pill" data-i18n="pill_fulfillment">Fulfillment</span>
+            <span class="pill" data-i18n="pill_capacity">Capacidad almacén</span>
+          </div>
+
+          <table>
+            <thead>
+            <tr>
+              <th data-i18n="logistics_col_center">Centro</th>
+              <th data-i18n="logistics_col_orders">Órdenes</th>
+              <th data-i18n="logistics_col_ontime">On-time</th>
+              <th data-i18n="logistics_col_status">Estado</th>
+            </tr>
+            </thead>
+            <tbody id="warehouseBody">
+            <!-- filas generadas por JS -->
+            </tbody>
+          </table>
+
+          <p class="small logistic-note" data-i18n="logistics_note">
+            Esta tabla se genera en el navegador a partir de datos simulados para mostrar tu
+            capacidad de construir dashboards sin backend.
+          </p>
+        </aside>
+
+        <!-- Actividad de clientes -->
+        <aside class="card">
+          <div class="card-header">
+            <div class="card-title" data-i18n="customers_title">Actividad de clientes</div>
+          </div>
+
+          <div class="customer-metrics">
+            <div class="customer-metric">
+              <span class="customer-label" data-i18n="customers_new_label">Clientes nuevos</span>
+              <strong id="cNew">0</strong>
+              <span class="customer-sub" id="cNewTrend">+0% vs período anterior</span>
+            </div>
+            <div class="customer-metric">
+              <span class="customer-label" data-i18n="customers_repeat_label">Clientes recurrentes</span>
+              <strong id="cRepeat">0</strong>
+              <span class="customer-sub" id="cRepeatTrend">+0% vs período anterior</span>
+            </div>
+          </div>
+
+          <div class="customer-metrics">
+            <div class="customer-metric">
+              <span class="customer-label" data-i18n="customers_churn_label">Churn estimado</span>
+              <strong id="cChurn">0%</strong>
+              <span class="customer-sub" data-i18n="customers_churn_sub">
+                Rotación sobre base activa.
+              </span>
+            </div>
+            <div class="customer-metric">
+              <span class="customer-label" data-i18n="customers_nps_label">NPS simulado</span>
+              <strong id="cNps">0</strong>
+              <span class="customer-sub" data-i18n="customers_nps_sub">
+                Satisfacción general de clientes.
+              </span>
+            </div>
+          </div>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <!-- Lógica del dashboard -->
+  <script src="dashboard.js"></script>
+</body>
+</html>
