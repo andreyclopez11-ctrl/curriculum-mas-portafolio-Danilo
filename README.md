@@ -1,44 +1,91 @@
-# 💼 Portafolio Premium — Danilo Andrey Cuadros López
-
-👋 Hola, soy **Danilo Andrey Cuadros López**, programador **Senior Web** con más de **6 años de experiencia internacional** en desarrollo de sitios web y aplicaciones interactivas.  
-
-He trabajado con empresas como **Bavaria**, **Corona Colcerámica**, **Amazon (Illinois)** y **Suncast**, desarrollando interfaces modernas, seguras y eficientes.  
+# 💼 Portafolio Profesional | Professional Portfolio  
+## Danilo Andrey Cuadros López — Senior Web Developer
 
 ---
 
-## 🚀 Tecnologías principales
+## 🇪🇸 Español
 
-✅ HTML5 · CSS3 · JavaScript (ES6+)  
-✅ React · Node.js · APIs REST  
-✅ VS Code · Git/GitHub · Figma · Firebase  
+👋 Hola, soy **Danilo Andrey Cuadros López**, **Programador Senior Web** con más de **6 años de experiencia internacional** desarrollando **páginas web profesionales, aplicaciones web y soluciones digitales a medida**.
+
+He trabajado en proyectos para empresas en **Estados Unidos y Latinoamérica**, colaborando con equipos técnicos y de negocio para crear **interfaces modernas, seguras, escalables y orientadas a resultados reales**.
+
+### 🚀 Perfil profesional
+- Desarrollo de **sitios web corporativos, landing pages y portafolios premium**
+- Enfoque en **rendimiento, experiencia de usuario (UI/UX) y mantenibilidad**
+- Trabajo **freelance y remoto**, con procesos claros y comunicación directa
+- Experiencia con empresas como:
+  - **Bavaria** (Colombia)
+  - **Corona Colcerámica** (Colombia)
+  - **Amazon** (Illinois, EE.UU.)
+  - **Suncast** (Illinois, EE.UU.)
+
+### 🧠 Qué ofrezco
+- Desarrollo de **páginas web profesionales**
+- **Landing pages** enfocadas en conversión
+- **Rediseño y optimización** de sitios existentes
+- **Mantenimiento web mensual**
+- Integración de formularios, automatizaciones y flujos de contacto
+
+> Los servicios y rangos de precios están detallados directamente en el portafolio online.
+
+### 🛠️ Tecnologías y herramientas
+- **Frontend:** HTML5 · CSS3 · JavaScript (ES6+) · React  
+- **Backend / Lógica:** Node.js · APIs REST  
+- **Herramientas:** VS Code · Git / GitHub · Figma · Firebase  
+- **Buenas prácticas:** Responsive Design · Accesibilidad · Performance · SEO técnico básico · Código limpio
 
 ---
 
-## 🌐 Enlaces principales
+## 🇺🇸 English
 
-🔗 **Portafolio en línea:**  
-https://andreyclopez11-ctrl.github.io/curriculum-mas-portafolio-Danilo/
+👋 Hi, I’m **Danilo Andrey Cuadros López**, a **Senior Web Developer** with over **6 years of international experience** building **professional websites, web applications, and custom digital solutions**.
 
-💼 **GitHub:**  
-https://github.com/andreyclopez11-ctrl
+I’ve worked on projects for companies across **the United States and Latin America**, collaborating with technical and business teams to deliver **modern, secure, scalable, and results-driven interfaces**.
 
-✉️ **Correo:**  
-andreyclopez11@gmail.com
+### 🚀 Professional profile
+- Development of **corporate websites, landing pages, and premium portfolios**
+- Strong focus on **performance, user experience (UI/UX), and maintainability**
+- Available for **freelance and remote work**, with clear processes and direct communication
+- Experience with companies such as:
+  - **Bavaria** (Colombia)
+  - **Corona Colcerámica** (Colombia)
+  - **Amazon** (Illinois, USA)
+  - **Suncast** (Illinois, USA)
+
+### 🧠 What I offer
+- **Professional website development**
+- Conversion-focused **landing pages**
+- **Website redesign and optimization**
+- **Monthly website maintenance**
+- Form integrations, automations, and contact workflows
+
+> Detailed services and pricing ranges are available on the online portfolio.
+
+### 🛠️ Technologies & tools
+- **Frontend:** HTML5 · CSS3 · JavaScript (ES6+) · React  
+- **Backend / Logic:** Node.js · REST APIs  
+- **Tools:** VS Code · Git / GitHub · Figma · Firebase  
+- **Best practices:** Responsive Design · Accessibility · Performance · Basic Technical SEO · Clean Code
 
 ---
 
-## 🧠 Proyectos destacados
+## 🌐 Links | Enlaces
+
+🔗 **Online Portfolio / Portafolio:**  
+👉 https://andreyclopez11-ctrl.github.io/curriculum-mas-portafolio-Danilo/
+
+💻 **GitHub:**  
+👉 https://github.com/andreyclopez11-ctrl
+
+✉️ **Professional Contact / Contacto:**  
+👉 andreyclopez11@gmail.com
+
+📍 **Location / Ubicación:**  
+Maywood, Illinois, USA
+
 ---
 
-## ✍️ Autor
-
+✍️ **Author / Autor**  
 **Danilo Andrey Cuadros López**  
-📍 Maywood, Illinois, EE.UU.  
+Senior Web Developer  
 🌐 https://andreyclopez11-ctrl.github.io/curriculum-mas-portafolio-Danilo/
-
----
-
-> ©️ 2025 Danilo Andrey Cuadros López — Portafolio Premium v1.0  
-
-> Hecho con ❤️ y dedicación.
-
