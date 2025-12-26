@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://andreyclopez11-ctrl.github.io/sitemap.xml
+Sitemap: https://andreycuadros.com/sitemap.xml
