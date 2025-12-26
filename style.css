@@ -6,381 +6,290 @@
   --aqua:#4edbac;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Segoe UI',system-ui,-apple-system,sans-serif;}
-body{color:var(--text);min-height:100vh;overflow-x:hidden}
+/* RESET */
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
 
-/* Fondo (canvas) */
+body{
+  color:var(--text);
+  min-height:100vh;
+  overflow-x:hidden;
+}
+
+/* ======================
+   FONDO (CANVAS)
+   ====================== */
 #bg{
-  position:fixed; inset:0; z-index:-1; display:block;
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  display:block;
   background:
     radial-gradient(60vw 60vh at 20% -10%, rgba(127,255,212,.15), transparent 60%),
     linear-gradient(120deg,var(--primary),var(--secondary));
   background-size:400% 400%;
   animation:gradient 18s ease infinite;
 }
-@keyframes gradient{0%{background-position:0% 50%;}50%{background-position:100% 50%;}100%{background-position:0% 50%;}}
-
-.hero{text-align:center;padding:3rem 1rem;}
-.profile-pic{width:120px;height:120px;border-radius:50%;border:3px solid var(--aqua);box-shadow:0 0 20px rgba(127,255,212,.4);}
-.hero h1{font-size:2rem;margin-top:1rem;}
-.tagline{color:#bfe9ff;margin-top:0.5rem;}
-.location{font-size:0.9rem;color:#e3f2fd;}
-
-.buttons{margin-top:1rem;display:flex;justify-content:center;flex-wrap:wrap;gap:10px;}
-.buttons button{
-  background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);
-  padding:10px 18px;border-radius:30px;cursor:pointer;
-  transition:transform .2s ease, background .3s ease, color .3s ease; backdrop-filter:blur(4px);
-}
-.buttons button:hover{background:#fff;color:#0072ff;transform:translateY(-1px);}
-.buttons button[data-active="true"]{background:#fff;color:#0072ff;}
-.buttons button:focus-visible{outline:3px solid var(--aqua);outline-offset:2px;}
-
-main{max-width:1000px;margin:auto;padding:2rem;}
-.section{
-  background:rgba(18,24,38,.88);padding:1.5rem;border-radius:16px;
-  box-shadow:0 10px 40px rgba(0,0,0,.25);margin-bottom:1.5rem;
-  display:none;border:1px solid rgba(255,255,255,.08);
-}
-.section.active{display:block;animation:fadeIn .6s ease-in;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
-
-h2{margin-bottom:.5rem;color:var(--aqua);}
-.meta{font-size:.85rem;color:#a3b5ff;}
-.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;}
-.project-list li{margin-bottom:.5rem;}
-footer{text-align:center;padding:1rem 0;color:#dcecff;}
-
-/* Firma + QR */
-.sign-qr{display:flex;gap:1.5rem;align-items:center;justify-content:space-between;}
-.sign-qr .sign p{margin:.25rem 0;}
-.sign-qr .sign .name{font-weight:700}
-.sign-qr .sign img{height:64px;display:block;margin:.25rem 0;}
-.sign-qr .qr{text-align:center}
-.sign-qr .qr img{width:130px;height:130px;border-radius:12px;background:#fff;padding:6px}
-
-/* Modal */
-.modal{position:fixed; inset:0; display:none; z-index:50;}
-.modal.open{display:block;}
-.modal__backdrop{position:absolute; inset:0; background:rgba(0,0,0,.55); backdrop-filter:blur(2px);}
-.modal__dialog{
-  position:relative; margin:8vh auto 0; width:min(560px,90vw);
-  background:rgba(18,24,38,.96); border:1px solid rgba(255,255,255,.08);
-  border-radius:16px; padding:1.25rem 1.25rem 1.5rem;
-  box-shadow:0 20px 60px rgba(0,0,0,.5);
-}
-.modal__close{
-  position:absolute; top:.5rem; right:.6rem; width:36px; height:36px;
-  border-radius:50%; border:1px solid rgba(255,255,255,.2);
-  background:transparent; color:#fff; font-size:1.4rem; cursor:pointer;
-}
-.modal a{color:var(--aqua);}
-
-/* Impresión / PDF limpio */
-@media print{
-  #bg, .buttons, .modal { display:none !important; }
-  body{ background:#fff !important; color:#000 !important; }
-  .hero{ padding:1rem 0 .5rem; color:#000; }
-  .profile-pic{ border-color:#000; box-shadow:none; }
-  main{ max-width:100%; padding:0 1cm; }
-  .section{
-    display:block !important; background:#fff; color:#000;
-    box-shadow:none; border:0; margin:0 0 .6cm 0; page-break-inside:avoid;
-  }
-  h2{ color:#000; border-bottom:1px solid #ddd; padding-bottom:4px; margin-top:.2cm; }
-  footer{ color:#000; border-top:1px solid #ddd; margin-top:.6cm; padding-top:.3cm; }
+@keyframes gradient{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
-/* Menos movimiento */
-@media (prefers-reduced-motion: reduce){ #bg{animation:none} }
-/* ==== Estilo Premium de la Firma ==== */
-.sign-qr {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.2);
-  text-align: center;
+/* ======================
+   HERO
+   ====================== */
+.hero{
+  text-align:center;
+  padding:3rem 1rem;
+  position:relative;
+  z-index:1;
 }
 
-:root[data-theme="light"] .sign-qr {
-  border-top: 1px solid rgba(0,0,0,0.15);
+.profile-pic{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  border:3px solid var(--aqua);
+  box-shadow:0 0 20px rgba(127,255,212,.4);
 }
 
-.sign-qr .sign p {
-  margin: 0.2rem 0;
-  color: var(--text);
+.hero h1{
+  font-size:2rem;
+  margin-top:1rem;
+  color:#fff;
 }
 
-.sign-qr .sign .name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-top: 0.4rem;
-  letter-spacing: 0.5px;
+.tagline{
+  color:#bfe9ff;
+  margin-top:0.5rem;
 }
 
-.sign-qr .sign img {
-  height: 90px;
-  opacity: 0.92;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  margin: 0.3rem auto;
-  filter: drop-shadow(0 0 8px rgba(0,0,0,0.4));
+.location{
+  font-size:0.9rem;
+  color:#e3f2fd;
 }
 
-.sign-qr .sign img:hover {
-  transform: scale(1.05);
-  opacity: 1;
-}
-
-.sign-qr .qr {
-  margin-top: 1.2rem;
-  text-align: center;
-  background: rgba(255,255,255,0.05);
-  padding: 0.8rem 1rem;
-  border-radius: 12px;
-  transition: background 0.3s ease;
-}
-
-.sign-qr .qr:hover {
-  background: rgba(255,255,255,0.12);
-}
-
-.sign-qr .qr img {
-  width: 120px;
-  height: 120px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 6px;
-  margin-top: 0.3rem;
-}
-
-.sign-qr .qr p {
-  font-size: 0.9rem;
-  opacity: 0.9;
-  margin-bottom: 0.3rem;
-}
-.buttons a.button-link{
-  background:rgba(255,255,255,0.1);
-  color:#fff;text-decoration:none;
-  border:1px solid rgba(255,255,255,0.2);
-  padding:10px 18px;border-radius:30px;
-  transition:transform .2s ease, background .3s ease, color .3s ease;
-  backdrop-filter:blur(4px);
-}
-.buttons a.button-link:hover{background:#fff;color:#0072ff;transform:translateY(-1px);}
-:root[data-theme="light"] .buttons a.button-link{
-  background:#fff;color:#0b0c10;border-color:#e6eaf5;
-}
-footer, .copyright { color: #ffffff !important; }
-/* ==============================
-   SERVICIOS & PRECIOS (PREMIUM)
-   ============================== */
-
-/* Mejor tipografía y espaciado dentro del pricing */
-#pricing .pricing-head h2{
-  font-size: 1.45rem;
-  letter-spacing: .2px;
-}
-
-#pricing .pricing-head p{
-  margin-top: .25rem;
-  color: rgba(240,244,255,.88);
-  line-height: 1.7;
-}
-
-/* Contenedor con borde más fino y mejor contraste */
-#pricing .pricing-table-wrap{
-  border-radius: 18px;
-  border: 1px solid rgba(255,255,255,.10);
-  background: rgba(8,12,20,.40);
-  box-shadow: 0 18px 60px rgba(0,0,0,.30);
-}
-
-/* Tabla con líneas más limpias */
-#pricing .pricing-table{
-  width: 100%;
-  border-collapse: collapse;
-}
-
-#pricing .pricing-table thead th{
-  font-weight: 800;
-  color: rgba(240,244,255,.92);
-  letter-spacing: .35px;
-}
-
-/* Mejor alineación y legibilidad */
-#pricing .pricing-table tbody td{
-  color: rgba(240,244,255,.92);
-}
-
-/* Columna de precio: más pro */
-#pricing .price-col{
-  font-weight: 900;
-  color: #ffffff;
-}
-
-/* Separadores de grupo más elegantes */
-#pricing .group-row td{
-  background: rgba(255,255,255,.08);
-  color: rgba(240,244,255,.95);
-  border-bottom: 1px solid rgba(255,255,255,.10);
-}
-
-/* Pills: más “agency” */
-#pricing .pill{
-  padding: 6px 11px;
-  font-weight: 800;
-  letter-spacing: .2px;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,.10);
-}
-
-/* Colores más premium */
-#pricing .pill.basic{
-  background: rgba(78,219,172,.14);
-  border-color: rgba(78,219,172,.25);
-}
-#pricing .pill.mid{
-  background: rgba(255,206,84,.14);
-  border-color: rgba(255,206,84,.25);
-}
-#pricing .pill.pro{
-  background: rgba(79,156,255,.14);
-  border-color: rgba(79,156,255,.25);
-}
-
-/* Notas */
-#pricing .pricing-notes{
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.08);
-  border-radius: 14px;
-  padding: .9rem 1rem;
-}
-
-/* CTA: botones consistentes con tu UI */
-#pricing .pricing-cta{
-  margin-top: 1rem;
-}
-
-#pricing .pricing-cta .button-link{
-  background: rgba(255,255,255,0.10);
-  color: #fff;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.18);
-  padding: 10px 16px;
-  border-radius: 999px;
-  transition: transform .2s ease, background .3s ease, color .3s ease;
-  backdrop-filter: blur(4px);
-}
-
-#pricing .pricing-cta .button-link:hover{
-  background: #fff;
-  color: #0072ff;
-  transform: translateY(-1px);
-}
-
-/* Links en tabla (si luego agregas) */
-#pricing a{
-  color: var(--aqua);
-  text-decoration: none;
-}
-#pricing a:hover{
-  text-decoration: underline;
-}
-
-/* Mobile: tabla más suave de usar */
-#pricing .pricing-table-wrap{
-  -webkit-overflow-scrolling: touch;
-}
-
-/* Print: tabla limpia en PDF */
-@media print{
-  #pricing .pricing-table-wrap{
-    border: 1px solid #ddd !important;
-    background: #fff !important;
-    box-shadow: none !important;
-  }
-  #pricing .pricing-table thead th{
-    background: #f5f5f5 !important;
-    color: #000 !important;
-    border-bottom: 1px solid #ddd !important;
-  }
-  #pricing .pricing-table tbody td{
-    color: #000 !important;
-    border-bottom: 1px solid #eee !important;
-  }
-  #pricing .group-row td{
-    background: #f5f5f5 !important;
-    color: #000 !important;
-  }
-  #pricing .pricing-notes{
-    border: 1px solid #ddd !important;
-    background: #fff !important;
-  }
-}
-/* Contact form premium */
-.contact-form{
-  margin-top: 1rem;
-  display: grid;
-  gap: .8rem;
-}
-
-.contact-form label span{
-  display:block;
-  margin-bottom:.35rem;
-  color: rgba(240,244,255,.9);
-  font-weight: 600;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding: 12px 14px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-  color: #fff;
-  outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus{
-  border-color: rgba(78,219,172,.55);
-  box-shadow: 0 0 0 3px rgba(78,219,172,.18);
-}
-
-.contact-form button.button-link{
+/* ======================
+   BOTONES (FIX iPhone REAL)
+   ====================== */
+.buttons{
+  margin-top:1rem;
+  display:flex;
   justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* Base (botones + links tipo botón) */
+.buttons button,
+.buttons a.button-link{
+  -webkit-appearance: none;
+  appearance: none;
+
+  background:rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+
+  padding:10px 18px;
+  border-radius:30px;
+
   cursor:pointer;
-  border:none;
+  text-decoration:none;
+  font-weight:600;
+
+  color:#ffffff !important;
+  -webkit-text-fill-color:#ffffff !important;
+
+  backdrop-filter:blur(6px);
+  transition:all .25s ease;
+
+  /* Ayuda a que en iOS se note el texto sobre fondos claros */
+  text-shadow: 0 1px 10px rgba(0,0,0,.25);
 }
 
-/* ✅ FIX iPhone: el hero se veía blanco y el texto casi invisible */
-canvas#bg{
-  position: fixed;
-  inset: 0;
-  z-index: -1;
+/* Hover */
+.buttons button:hover,
+.buttons a.button-link:hover{
+  background:#ffffff;
+  border-color:rgba(255,255,255,.45);
+
+  color:#0b1b2a !important;
+  -webkit-text-fill-color:#0b1b2a !important;
+
+  transform:translateY(-1px);
+  text-shadow:none;
 }
 
-header.hero{
-  position: relative;
-  z-index: 1;
-  padding: 28px 16px 18px;
-  background: radial-gradient(1200px 400px at 50% -10%, rgba(0,180,170,.45), rgba(0,0,0,0));
+/* Activo: (a prueba de overrides) */
+.buttons button[data-active="true"],
+.buttons button.active,
+.buttons button[aria-current="page"]{
+  background:#ffffff !important;
+  border-color:rgba(255,255,255,.45) !important;
+
+  color:#0b1b2a !important;
+  -webkit-text-fill-color:#0b1b2a !important;
+
+  font-weight:800;
+  text-shadow:none;
 }
 
-header.hero h1,
-header.hero .tagline,
-header.hero .location{
-  color: #ffffff;
-  opacity: 1 !important;
-  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+/* Si el texto está dentro de <span> o nodos hijos */
+.buttons button[data-active="true"] *,
+.buttons button.active *,
+.buttons button[aria-current="page"] *{
+  color:#0b1b2a !important;
+  -webkit-text-fill-color:#0b1b2a !important;
 }
 
-/* Botones visibles en el hero */
-header.hero .buttons button,
-header.hero .buttons a.button-link{
-  color: #ffffff;
+/* Focus */
+.buttons button:focus-visible,
+.buttons a.button-link:focus-visible{
+  outline:3px solid var(--aqua);
+  outline-offset:2px;
+}
+
+/* ======================
+   MAIN / SECCIONES
+   ====================== */
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:2rem;
+}
+
+.section{
+  background:rgba(18,24,38,.88);
+  padding:1.5rem;
+  border-radius:16px;
+  box-shadow:0 10px 40px rgba(0,0,0,.25);
+  margin-bottom:1.5rem;
+  display:none;
+  border:1px solid rgba(255,255,255,.08);
+}
+
+.section.active{
+  display:block;
+  animation:fadeIn .6s ease-in;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(10px);}
+  to{opacity:1;transform:translateY(0);}
+}
+
+h2{
+  margin-bottom:.5rem;
+  color:var(--aqua);
+}
+
+.meta{
+  font-size:.85rem;
+  color:#a3b5ff;
+}
+
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:1rem;
+}
+
+.project-list li{
+  margin-bottom:.5rem;
+}
+
+/* ======================
+   FOOTER
+   ====================== */
+footer{
+  text-align:center;
+  padding:1rem 0;
+  color:#ffffff;
+}
+
+/* ======================
+   FIRMA + QR
+   ====================== */
+.sign-qr{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  margin-top:2rem;
+  padding-top:1.5rem;
+  border-top:1px solid rgba(255,255,255,.2);
+}
+
+.sign-qr .sign img{
+  height:90px;
+  filter:drop-shadow(0 0 8px rgba(0,0,0,.4));
+}
+
+.sign-qr .qr img{
+  width:120px;
+  height:120px;
+  background:#fff;
+  border-radius:10px;
+  padding:6px;
+}
+
+/* ======================
+   MODAL
+   ====================== */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  z-index:50;
+}
+
+.modal.open{display:block;}
+
+.modal__backdrop{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+  backdrop-filter:blur(2px);
+}
+
+.modal__dialog{
+  margin:8vh auto 0;
+  width:min(560px,90vw);
+  background:rgba(18,24,38,.96);
+  border-radius:16px;
+  padding:1.5rem;
+  border:1px solid rgba(255,255,255,.1);
+  position:relative;
+}
+
+.modal__close{
+  position:absolute;
+  top:.6rem;
+  right:.6rem;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:transparent;
+  border:1px solid rgba(255,255,255,.25);
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ======================
+   PRINT / PDF
+   ====================== */
+@media print{
+  #bg,.buttons,.modal{display:none!important;}
+  body{background:#fff;color:#000;}
+  .section{display:block;background:#fff;color:#000;box-shadow:none;}
+  h2{color:#000;}
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce){
+  #bg{animation:none;}
 }
