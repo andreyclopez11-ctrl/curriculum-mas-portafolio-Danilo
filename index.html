@@ -107,7 +107,6 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Fondo interactivo -->
   <canvas id="bg" aria-hidden="true"></canvas>
@@ -377,33 +376,28 @@
         Completa el formulario y recibirás respuesta por correo.
       </p>
 
-      <form action="https://formspree.io/f/xeovakad" method="POST">
-      </form>
-
-      </div>
+      <!-- ✅ Form único (quitado el form vacío y el </div> suelto) -->
       <form class="contact-form"
-      action="https://formspree.io/f/xeovakad"
-      method="POST">
+        action="https://formspree.io/f/xeovakad"
+        method="POST">
 
-      <label>
-        <span data-i18n="form.name">Nombre</span>
-        <input type="text" name="name" placeholder="Nombre" required>
-      </label>
+        <label>
+          <span data-i18n="form.name">Nombre</span>
+          <input type="text" name="name" placeholder="Nombre" required>
+        </label>
 
-      <label>
-        <span data-i18n="form.email">Correo</span>
-        <input type="email" name="email" placeholder="Correo" required>
-      </label>
+        <label>
+          <span data-i18n="form.email">Correo</span>
+          <input type="email" name="email" placeholder="Correo" required>
+        </label>
 
-      <label>
-        <span data-i18n="form.message">Mensaje</span>
-        <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
-      </label>
+        <label>
+          <span data-i18n="form.message">Mensaje</span>
+          <textarea name="message" rows="5" placeholder="Mensaje" required></textarea>
+        </label>
 
-      <!-- Opcional: para que te llegue con asunto claro -->
-      <input type="hidden" name="_subject" value="Nueva solicitud desde tu web">
-
-      <button type="submit" class="button-link" data-i18n="form.send">Enviar mensaje</button>
+        <input type="hidden" name="_subject" value="Nueva solicitud desde tu web">
+        <button type="submit" class="button-link" data-i18n="form.send">Enviar mensaje</button>
       </form>
     </section>
 
@@ -423,4 +417,34 @@
     <!-- Firma + QR (también aparece en el PDF) -->
     <section class="section sign-qr">
       <div class="sign">
-        <p data
+        <p data-i18n="sign.greeting">Atentamente,</p>
+        <img src="./firma.png" alt="Firma de Danilo" onerror="this.parentElement.style.display='none'"/>
+        <p class="name" data-i18n="sign.name">Danilo Andrey Cuadros López</p>
+      </div>
+      <div class="qr">
+        <p data-i18n="qr.text">Escanea para ver portafolio</p>
+        <img id="qrImage" alt="QR a mi perfil"/>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small data-i18n="footer.text">©️ 2025 Danilo Andrey Cuadros López — Programador Senior Web</small>
+  </footer>
+
+  <!-- Modal de contacto -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-labelledby="contactTitle" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__dialog" role="document" tabindex="-1">
+      <button class="modal__close" aria-label="Cerrar" title="Cerrar" data-close>&times;</button>
+      <h2 id="contactTitle" data-i18n="modal.title">Contacto</h2>
+      <p><strong data-i18n="modal.emailLabel">Email:</strong> <a href="mailto:andreyclopez11@gmail.com">andreyclopez11@gmail.com</a></p>
+      <p><strong data-i18n="modal.phoneLabel">Teléfono:</strong> <a href="tel:+12249988164">+1 224 998 8164</a></p>
+      <p><strong data-i18n="modal.locationLabel">Ubicación:</strong> <span data-i18n="modal.locationValue">Maywood, Illinois (EE. UU.)</span></p>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+  <script src="i18n-auto.js"></script>
+</body>
+</html>

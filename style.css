@@ -356,3 +356,31 @@ footer, .copyright { color: #ffffff !important; }
   cursor:pointer;
   border:none;
 }
+
+/* ✅ FIX iPhone: el hero se veía blanco y el texto casi invisible */
+canvas#bg{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+header.hero{
+  position: relative;
+  z-index: 1;
+  padding: 28px 16px 18px;
+  background: radial-gradient(1200px 400px at 50% -10%, rgba(0,180,170,.45), rgba(0,0,0,0));
+}
+
+header.hero h1,
+header.hero .tagline,
+header.hero .location{
+  color: #ffffff;
+  opacity: 1 !important;
+  text-shadow: 0 2px 16px rgba(0,0,0,.35);
+}
+
+/* Botones visibles en el hero */
+header.hero .buttons button,
+header.hero .buttons a.button-link{
+  color: #ffffff;
+}
